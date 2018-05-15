@@ -2,7 +2,7 @@
     // A nonstandard implementation of the require function is available, which returns Promise object, which resolves into exported object of the specified module.
     // Example: require('https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js').then($=>{console.log($('body'))})
     // Synchronous implementation of the same function is used inside the modules (look require in Node.js (CommonJS))
-    require('module.js').then(module => {
+    require('common_module.js').then(module => {
         alert('I have load selected module! Check the console')
         console.log(module)
     })
