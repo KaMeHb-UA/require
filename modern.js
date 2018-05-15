@@ -1,0 +1,8 @@
+(()=>{const require=(()=>{return exports=>{exports=(url=>{return{url,xhr:new XMLHttpRequest()}})(exports);return new Promise((__filename,__dirname)=>{exports.xhr.open('GET',exports.url,true);exports.xhr.send();exports.xhr.onreadystatechange=()=>{if(exports.xhr.readyState!=4)return;if(exports.xhr.status!=200)__dirname(new Error(`Cannot require module ${exports.url}: ${exports.xhr.status} (${exports.xhr.statusText})`));else{try{let module={exports:{}};eval(`Promise.resolve((async({__filename,__dirname,exports})=>{${exports.xhr.responseText}})({__filename:${JSON.stringify(exports.url)},__dirname:${JSON.stringify((a=>{a.pop();return a.join('/')})(exports.url.split('/')))},exports:new Proxy(module.exports,{})})).then(()=>{__filename(module.exports)})`);}catch(e){__dirname(e)}}}})}})(),__filename=(a=>{return `${a[a.length-3]}://${a[a.length-2]}`})((new Error('')).stack.split(/(\w+):\/\/(\S+):\d+:\d+/)),__dirname=(a=>{a.pop();return a.join('/')})(__filename.split('/'));(async()=>{
+    // A nonstandard implementation of the require function is available, which returns Promise object, which resolves into exported object of the specified module.
+    // Example: var $ = await require('https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js');
+    // Asynchronous implementation of the require function is used inside the modules (most like require in Node.js (CommonJS) but with async structure). This is very useful for loading few modules parallel way
+    // This works ONLY with ES8+ standard because of async functions. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+    const res = await require('modern_module.js');
+    console.log(res)
+})()})()
