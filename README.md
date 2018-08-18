@@ -2,7 +2,7 @@
 ## Get Started
 Just connect it to your page like this:
 ```html
-<sctipt src="https://cdn.jsdelivr.net/gh/KaMeHb-UA/require@{TARGET_VERSION}/next.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/KaMeHb-UA/require@{TARGET_VERSION}/next.min.js"></script>
 ```
 It will create `require`, `__dirname` and `__filename` constants in global scope (`window`)
 ## API
