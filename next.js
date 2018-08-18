@@ -31,7 +31,7 @@
     async function require(url){
         var script,
             dir = url.split('/'),
-            baseDir = this.constructor === String ? `${this}` : __dirname;
+            baseDir = (this || {}).constructor === String ? `${this}` : __dirname;
         dir.pop(); // removes last element (filename)
         try{
             script = await httpGet(absolutePath.test(url) ? url : `${baseDir}/${url}`);
