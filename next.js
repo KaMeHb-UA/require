@@ -9,7 +9,11 @@
         })
     }
     const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor,
-        absolutePath = /^(\w+):\/\//,
+        absolutePath = {
+            test(str){
+                return /^(\w+):\/\//.test(str) || str.startsWith('data:') || str.startsWith('blob:')
+            }
+        },
         __filename = (_ => {
             return `${_[_.length-3]}://${_[_.length-2]}`
         })((new Error('')).stack.split(/(\w+):\/\/(\S+):\d+:\d+/)),
